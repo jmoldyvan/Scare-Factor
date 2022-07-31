@@ -1,0 +1,609 @@
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-size: 62.5%;
+   }
+   
+   html {
+     font-size: 62.5%;
+     /* * Variables */
+     --size1: calc(2rem + 1vw); 
+     --size2: calc(3.5rem + 1vw); 
+     --size3: calc(3rem + 1vw); 
+     --size4: calc(2.4rem + 1vw); 
+     --text: calc(2rem + 1vw); 
+     --big: calc(6rem + 1vw); 
+     --special-color: rgb(133, 22, 22);
+     --main-color: #414141;
+     --gray-text: #525252;
+     scroll-behavior: smooth;
+   }
+   
+   h1 {
+     font-size: var(--size1);
+     font-family: 'Pattaya', sans-serif;
+   }
+   
+   li,
+   button,
+   label,
+   input,
+   a,
+   p {
+     font-size: var(--text);
+     font-weight: 800;
+     letter-spacing: .4rem;
+   }
+   
+   h2 {
+     font-size: var(--size2);
+     font-family: 'Nosifer', cursive;
+     font-weight: 600
+   }
+   
+   h3 {
+     font-size: var(--size3);
+   }
+   
+   h4,
+   h5 {
+     font-size: var(--size4);
+   }
+   
+   a {
+     text-decoration: none;
+     color: #ff0000;
+   }
+   p{
+     font-family: 'Shadows Into Light', cursive;
+   }
+   
+   ul {
+     list-style: none;
+   }
+   
+   .flex {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   body {
+     font-family: 'Pattaya', sans-serif;
+     animation: opening 1.2s ease-in-out;
+   }
+   
+   .fixed {
+     position: fixed;
+   }
+   
+   /* *Nav Section */
+   .main-head {
+     box-shadow: 0 10px 10px rgb(0, 0, 0);
+     z-index: 2;
+     position: relative;
+     color: white;
+     background-color: #000000;
+   }
+   
+   .menu-check,
+   .burger {
+     display: none;
+   }
+   
+   nav {
+     width: 90%;
+     margin: auto;
+     display: flex;
+     align-items: center;
+     min-height: 10vh;
+     padding: 2rem 0;
+   }
+   
+   #logo {
+     flex: 1 1 20rem;
+   }
+   
+   .nav-links {
+     display: flex;
+     justify-content: space-around;
+     flex: 1 1 20rem;
+   }
+   
+   /* *Hero Section */
+   .hero {
+     min-height: 90vh;
+     width: 95%;
+     margin: 0 0 0 auto;
+     display: flex;
+     flex-wrap: wrap;
+     overflow: hidden;
+   }
+   
+   .hero-introduction {
+     flex: 2 1 40rem;
+     text-align: center;
+   }
+   
+   .hero-introduction p {
+     padding: 5rem 10rem;
+     color: var(--gray-text);
+   }
+   .hero-introduction h2 {
+     padding-top: 3rem;
+   }
+   .hero-introduction a {
+     padding: 2rem 8rem;
+     border: 3px solid #000000;
+     margin-bottom: 4rem;
+   }
+   
+   .hero-images {
+     flex: 1 1 40rem;
+     background: url('/spookySite/spookySite/img/cartoonYellowwindowsMoreBlur.png') no-repeat,
+     linear-gradient(#000000, #767676); 
+     position: relative;
+     z-index: 1;
+   }
+   .hero-shaggy {
+     margin-top: 18rem;
+     margin-left: 2rem;
+     width: 100%;
+     height: 100%;
+   }
+   
+   .ghost {
+     position: absolute;
+     bottom: 0;
+     left: -20%;
+     max-height: 70%;
+     z-index: -1;
+     transform: translateY(10%) rotateZ(-8deg) rotateX(-90deg);
+     animation: ghost-entrance 1.5s ease-in-out 0.5s forwards,
+       ghost-shake 2.5s infinite ease alternate-reverse 2s;
+     transform-origin: bottom;
+   }
+   
+   .ghost2 {
+     left: 40%;
+   }
+   
+   /* *Animations */
+   @keyframes opening {
+     from {
+       opacity: 0;
+     }
+     to {
+       opacity: 1;
+     }
+   }
+   
+   @keyframes ghost-entrance {
+     from {
+       transform: translateY(10%) rotateZ(-8deg) rotateX(-90deg);
+     }
+     to {
+       transform: translateY(0) rotateZ(0deg) rotateX(0);
+     }
+   }
+   
+   @keyframes ghost-shake {
+     from {
+       transform: rotateZ(-5deg);
+     }
+     to {
+       transform: rotateZ(0deg);
+     }
+   }
+   
+   /* *rooms Section */
+   #rooms {
+     min-height: 100vh;
+     display: flex;
+     flex-flow: row-reverse;
+     flex-wrap: wrap;
+   }
+   
+   .rooms-text {
+     flex: 2 1 40rem;
+     justify-content: space-around;
+     background: var(--main-color);
+     color: #fff;
+   }
+
+   .rooms-pirate p, .rooms-library p, .rooms-lab p{
+     text-shadow: 2px 2px red ;
+   }
+   .rooms-pirate h3, .rooms-library h3, .rooms-lab h3{
+     text-decoration: underline black;
+     text-shadow: 3px 3px black;
+   }
+   
+   .rooms-text div {
+     padding: 3rem 8rem;
+   }
+   
+   .rooms-text h3 {
+     padding: 2rem 0;
+     letter-spacing: 1rem;
+     font-family:  'Creepster', cursive;
+     font-weight: 400;
+   }
+   
+   .rooms-image {
+     flex: 1 1 40rem;
+     position: relative;
+   }
+   
+   .rooms-image img {
+     display: flex;
+     flex-flow: column;
+     width: 100%;
+     object-fit: cover;
+     overflow: hidden;
+   }
+   
+   /** reviews Section  */
+   #work {
+     min-height: 100vh;
+     display: flex;
+     flex-flow: column;
+   }
+   
+   .reviews {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     position: relative;
+     min-height: 100vh;
+     background: var(--main-color);
+     gap: 5rem;
+     padding: 2rem;
+   }
+   
+   .reviews div {
+     padding: 3rem;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     overflow: hidden;
+     border-radius: 3%;
+     box-shadow:  5px 5px 15px rgb(201, 131, 0);
+     }
+
+     .reviews div h4{
+     margin-bottom: 3rem;
+     }
+   
+   .reviews1 {
+     grid-column: 1/3;
+     background: url(/spookySite/spookySite/img/parchment2.jpg) no-repeat;
+     background-size: cover;
+   }
+   .reviewing {
+     font-family: 'Shadows Into Light Two', cursive;
+     letter-spacing: .2rem;
+     font-size: var(--text);
+     margin-bottom: 5rem;
+     text-shadow: 1px 1px black;
+   }
+   .reviews2 {
+     grid-column: 3/4;
+     grid-row: 1/3;
+     background: url(/spookySite/spookySite/img/parchment.jpg) no-repeat;
+     background-size: cover;
+   }
+   .reviews3 , .reviews4 {
+     background: url(/spookySite/spookySite/img/parchment3.jpg) no-repeat;
+     background-size: cover;
+   }
+   .reviews1, .reviews2, .reviews3, .reviews4{
+     display: flex;
+     flex-flow: column;
+     justify-content: center;
+     align-items:flex-start;
+   }
+   .star{
+     margin-bottom: 3rem;
+   }
+   
+   #reviews-head {
+     display: flex;
+     flex-flow: column;
+     align-items: center;
+     justify-content: center;
+     background: rgba(0, 0, 0, 0.609);
+     color: rgb(255, 0, 0);
+     padding: 3rem 9rem;
+     text-align: center;
+   }
+   
+   /** Contact Section  */
+   
+   #contact {
+     min-height: 80vh;
+     display: flex;
+     flex-wrap: wrap;
+     flex-flow: row-reverse;
+     margin-right: 9rem;
+   }
+   #contact h2{
+     margin: 0;
+     margin-bottom: 2rem;
+   }
+   .hero-introduction a:hover{
+     color: rgb(255, 255, 255);
+     background: #000000;
+     border: #ff0000 solid 3px;
+   }
+   .nav-links li:hover{
+     transform: scale(1.5);
+     text-decoration: underline #ff0000 solid 2px;
+   }
+   
+   .form-wrapper {
+     flex: 3 1 40rem;
+   }
+   .form-wrapper h2 {
+     margin: 5rem 0;
+   }
+   
+   .form-wrapper span {
+     font-size: var(--big);
+     color: var(--special-color);
+   }
+   
+   .form-wrapper label {
+     display: block;
+   }
+   .form-wrapper input {
+     display: block;
+     margin: 3rem 0;
+     background: var(--main-color);
+     color: #fff;
+     border: none;
+     padding: 1rem;
+     border-radius: 5px;
+   }
+   
+   .form-wrapper button {
+     padding: 1rem 8rem;
+     border-radius: 5px;
+     border: none;
+     color: #fff;
+     width: 100%;
+     background: var(--special-color);
+   }
+   
+   #contact img {
+     max-width: 500px;
+   }
+
+   #blood{
+     margin-right: 15rem;
+   }
+   
+   /* * Footer */
+   
+   footer {
+     background: var(--main-color);
+     color: #fff;
+     display: flex;
+     padding: 3rem 5%;
+     align-items: center;
+     flex-wrap: wrap;
+   }
+   footer h4 {
+     flex: 3 1 40rem;
+     font-size: calc(1.4rem + 1vw);
+   }
+   
+   footer ul {
+     display: flex;
+     flex: 1 1 40rem;
+     justify-content: space-between;
+     align-items: center;
+   }
+   
+   /* *Responsive */
+   @media screen and (max-width: 1385px) {
+     .rooms-pirate p, .rooms-library p, .rooms-lab p{
+          font-size: 1.5rem  ;
+        }
+     .rooms-pirate h3, .rooms-library h3, .rooms-lab h3{
+          font-size: 3rem  ;
+        }
+        .rooms-text div {
+          padding: 1rem 5rem;
+        }
+        #rooms {
+          min-height: 80vh;
+        }
+   }
+   
+   @media screen and (max-width: 845px) {
+     .hero {
+       width: 100%;
+     }
+   
+     /** Burger Menu  */
+   
+     .burger {
+       position: relative;
+       display: block;
+       cursor: pointer;
+     }
+     .burger span {
+       padding: 0.2rem 1.8rem;
+       background: var(--gray-text);
+       margin: 0.5rem 0;
+       display: block;
+     }
+     .nav-links a {
+       color: #fff;
+       font-size: var(--size4);
+       background: rgba(255, 255, 255, 0.2);
+       border-radius: 30px;
+       padding: 0.5rem 1.5rem;
+     }
+   
+   
+     .nav-links {
+       background: var(--special-color);
+       width: 70vw;
+       height: 50vh;
+       margin-left: 30vw;
+       border-bottom-left-radius: 10%;
+       position: fixed;
+       bottom: 100%;
+       left: 0;
+       flex-direction: column;
+       align-items: center;
+       justify-content: flex-start;
+       transition: transform 1s ease;
+     }
+   
+     .nav-links li {
+       margin: 3rem;
+     }
+   
+     .nav-open {
+       transform: translateY(100%);
+     }
+     .toggle .line2 {
+       opacity: 0;
+     }
+   
+     .toggle .line1 {
+       background: #fff;
+       transform: rotateZ(45deg) translateY(300%);
+       transition: 0.3s ease;
+     }
+     .toggle .line3 {
+       background: #fff;
+       transform: rotateZ(-45deg) translateY(-300%);
+       transition: 0.3s ease;
+     }
+   
+     .line1 {
+       transition: 0.3s ease;
+     }
+     .line3 {
+       transition: 0.3s ease;
+     }
+   
+     /** Hero Section Mobile */
+   
+     .hero-introduction p {
+       padding: 5rem 3rem;
+     }
+   
+     /* * rooms section mobile */
+     .rooms-text div {
+       padding: 3rem 2rem;
+     }
+   
+     .rooms-text {
+       margin: 1rem;
+       box-shadow: 1px 5px 10px #000000;
+     }
+   
+     /** reviews Section Mobile  */
+
+     #reviews-head{
+          padding-top: 10rem;
+          padding-bottom: 5rem;
+          background: linear-gradient(
+           to bottom,
+           rgba(0, 0, 0, 0.5),
+           rgba(0, 0, 0, 0.75)
+         ),
+     }
+   
+     .reviews div {
+       grid-row: auto;
+       grid-column: auto;
+     }
+     .reviews {
+       grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+     }
+   
+     .reviews4 {
+       display: none ;
+     }
+   
+     /* *Contact Section Mobile */
+     #contact img, #blood {
+       display: none;
+     }
+
+   
+     .form-wrapper {
+       background: linear-gradient(
+           to top,
+           rgba(0, 0, 0, 0.75),
+           rgba(0, 0, 0, 0.75)
+         ),
+         url("/spookySite/spookySite/img/blueWindows.png");
+       background-position: center;
+       background-size: cover;
+       background-repeat: no-repeat;
+       color: #fff;
+       padding-bottom: 10rem;
+       padding-top: 10rem;
+     }
+   
+     .form-wrapper span {
+       color: #ff0000;
+     }
+   
+     .form-wrapper button {
+       background: #ff0000;
+       color: rgb(255, 255, 255);
+     }
+   
+     .form-wrapper input {
+          border: #ffffffaf solid ;
+       background: rgb(118, 28, 28);
+       color: rgb(15, 14, 14);
+       
+     }
+   
+     /* * Footer Section Mobile */
+   
+     footer {
+       padding: 1rem 5% 0 5%;
+       background-color: #000000;
+     }
+   
+     footer h4 {
+       padding-bottom: 2rem;
+       text-align: center;
+     }
+   }
+   
+   @media screen and (min-width: 1700px) {
+     html {
+       --size1: 3rem;
+       --size2: 4.5rem;
+       --size3: 3.5rem;
+       --size4: 4rem;
+       --text: 3rem;
+       --big: 6rem;
+     }
+   }

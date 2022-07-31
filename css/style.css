@@ -552,6 +552,9 @@
        display: none;
      }
 
+     #contact {
+      margin-right: 0rem;
+    }
    
      .form-wrapper {
        background: linear-gradient(
